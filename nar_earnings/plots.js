@@ -1,9 +1,6 @@
-var apiKey = "NABDZFV4HO4HQ68G";
+var apiKey ='NABDZFV4HO4HQ68G'
 
-var request = require('request');
-
-
-var url = 'https://www.alphavantage.co/query?function=EARNINGS&symbol=IBM&apikey=NABDZFV4HO4HQ68G';
+var url = 'https://www.alphavantage.co/query?function=EARNINGS&symbol=IBM&apikey=${apiKey}';
 
 request.get({
     url: url,
@@ -48,4 +45,3 @@ request.get({
       console.log(dates)
     })
   }
-   
