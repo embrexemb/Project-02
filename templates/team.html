@@ -14,7 +14,7 @@
   <body>
     <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
       <div class="container">
-        <a href="index.html" class="navbar-brand">Featured Stocks</a>
+        <a href="/" class="navbar-brand">Featured Stocks</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,61 +23,130 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="themes">Dashboard <span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="themes">
-                <a class="dropdown-item" href="dashboard.html">Main Dashboard</a>
+                <a class="dropdown-item" href="{{ url_for('dashboard')}}">Main Dashboard</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="compare_stocks.html">Compare Stocks</a>
+                <a class="dropdown-item" href="{{ url_for('compare_stocks')}}">Compare Stocks</a>
       
                </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="methodology.html">Methodology</a>
+              <a class="nav-link" href="{{ url_for('method')}}">Methodology</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="modeling.html">Predictive Models</a>
+              <a class="nav-link" href="{{ url_for('modeling')}}">Predictive Models</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="team.html">The Team</a>
+              <a class="nav-link" href="{{ url_for('teams')}}">The Team</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="download">Spacelab <span class="caret"></span></a>
-              <div class="dropdown-menu" aria-labelledby="download">
-                <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/mbf28j4t/">Open in JSFiddle</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../5/spacelab/bootstrap.min.css" download>bootstrap.min.css</a>
-                <a class="dropdown-item" href="../5/spacelab/bootstrap.css" download>bootstrap.css</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../5/spacelab/_variables.scss" download>_variables.scss</a>
-                <a class="dropdown-item" href="../5/spacelab/_bootswatch.scss" download>_bootswatch.scss</a>
-              </div>
-            </li>
+      
           </ul>
           <ul class="navbar-nav ms-md-auto">
             <li class="nav-item">
-              <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/thomaspark/bootswatch/"><i class="fa fa-github"></i> GitHub</a>
+              <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/embrexemb/Project-02"><i class="fa fa-github"></i> Project GitHub</a>
             </li>
             <li class="nav-item">
-              <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="fa fa-twitter"></i> Twitter</a>
+              <a target="_blank" rel="noopener" class="nav-link" href="https://twitter.com/bootswatch"><i class="fa fa-twitter"></i> Bootswatch Twitter</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
+    <!-- Top Section -->
+    <div id="top-header" class="container-fluid">
+      <div class="row">
+         
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+              <h1>About Us</h1>
+              <h6>Our Team</h6>
+          </div>
+      </div>
+  </div>
+
     <div class="container">
       <div class="page-header" id="banner">
         <div class="row">
-          <div class="col-lg-8 col-md-7 col-sm-6">
-            <h1>Team</h1>
-            <p class="lead">Use container for five team members</p>
+
+          <div class="col-md-3 col-xs-12">
+            <div class="card border-light">
+                
+                <h3>Rupesh Patel</h3>
+                <p class='aboutus'>
+                    <a href="#" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/github/"></a>
+                    <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/linkedin/icon.png"></a>
+                    <a href="" target="_blank"><img src="https://icons.getbootstrap.com/icons/envelope/"></a>
+                </p>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-5 col-sm-6">
-            <div class="sponsor">
-              <script async src="https://cdn.carbonads.com/carbon.js?serve=CKYIE23N&placement=bootswatchcom" id="_carbonads_js"></script>
+          </div>
+          <div class="row">
+
+          <div class="col-md-3 col-xs-12">
+            <div class="card border-light">
+                
+                <h3>John McIntyre</h3>
+                <p class='aboutus'>
+                    <a href="#" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/github/"></a>
+                    <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/linkedin/icon.png"></a>
+                    <a href="" target="_blank"><img src="https://icons.getbootstrap.com/icons/envelope/"></a>
+                </p>
             </div>
           </div>
         </div>
-      </div>
 
+        <div class="row">
+
+          <div class="col-md-3 col-xs-12">
+            <div class="card border-light">
+                
+                <h3>Norman Robinson</h3>
+                <p class='aboutus'>
+                    <a href="#" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/github/"></a>
+                    <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/linkedin/icon.png"></a>
+                    <a href="" target="_blank"><img src="https://icons.getbootstrap.com/icons/envelope/"></a>
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-3 col-xs-12">
+            <div class="card border-light">
+                
+                <h3>Emisael Lopez</h3>
+                <p class='aboutus'>
+                    <a href="#" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/github/"></a>
+                    <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/linkedin/icon.png"></a>
+                    <a href="" target="_blank"><img src="https://icons.getbootstrap.com/icons/envelope/"></a>
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-3 col-xs-12">
+            <div class="card border-light">
+                
+                <h3>Eve Barkley</h3>
+                <p class='aboutus'>
+                    <a href="#" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/github/"></a>
+                    <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
+                            src="https://icons.getbootstrap.com/icons/linkedin/icon.png"></a>
+                    <a href="" target="_blank"><img src="https://icons.getbootstrap.com/icons/envelope/"></a>
+                </p>
+            </div>
+          </div>
+      </div>
+      </div>
       <!-- Navbar
       ================================================== -->
      
@@ -103,19 +172,18 @@
       
       <!-- Dialogs
       ================================================== -->
-            
+    </div>
 
       <footer id="footer">
         <div class="row">
           <div class="col-lg-12">
             <ul class="list-unstyled">
               <li class="float-end"><a href="#top">Back to top</a></li>
-              <li><a href="https://blog.bootswatch.com/">Blog</a></li>
-              <li><a href="https://blog.bootswatch.com/rss/">RSS</a></li>
-              <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
-              <li><a href="https://github.com/thomaspark/bootswatch">GitHub</a></li>
-              <li><a href="../help/#api">API</a></li>
-              <li><a href="../help/#donate">Donate</a></li>
+          
+              <li><a href="https://twitter.com/bootswatch">Bootswatch Twitter</a></li>
+              <li><a href="https://github.com/thomaspark/bootswatch">Bootstrap GitHub</a></li>
+              <li><a href="/">API-Home</a></li>
+            
             </ul>
             <p>&copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;.</p>
             <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">MIT License</a>.</p>

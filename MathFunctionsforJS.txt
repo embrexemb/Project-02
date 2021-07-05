@@ -1,0 +1,9 @@
+https://mathjs.org/docs/reference/functions/variance.html
+
+https://www.codecademy.com/learn/learn-d3
+
+quandly - api:cTjtKuUXnQ2BzRKLyv5W
+
+https://www.quandl.com/api/v3/datasets/WIKI/AMZN.json?start_date=2016-10-01&end_date=2017-10-01&api_key=cTjtKuUXnQ2BzRKLyv5W
+
+https://mkdinh.github.io/greek-search/data/data.json
