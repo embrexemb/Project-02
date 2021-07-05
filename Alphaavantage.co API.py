@@ -9,10 +9,10 @@ r = requests.get(url)
 data = r.json()
 
 #json.dumps converts list of dictionary to json string.
-jsonString = json.dumps(data)
+jsonString = json.dumps(data['Time Series (Daily)'])
 
 #opens new file
 jsonFile = open("data.json", "w")
 jsonFile.write(jsonString)
 jsonFile.close()
-pprint(data)
+#pprint(data['Time Series (Daily)'])
