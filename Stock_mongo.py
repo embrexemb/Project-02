@@ -1,11 +1,14 @@
 import requests
 from pprint import pprint
 from config import api_key
+from config import password
 import json
 import pymongo
 import pandas as pd
 import time
 from ratelimiter import RateLimiter
+from pymongo import MongoClient
+import ssl
 
 @RateLimiter(max_calls=5, period=61)
 def do_something():
@@ -17,11 +20,15 @@ list = pd.read_csv ('Stock List.csv')
 #print(list)
 
 ticker_list=  list['Symbol'].tolist()
-print(ticker_list)
+#print(ticker_list)
 
         #Mongo client
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb1 = client["Stocks"]
+uri = 'mongodb+srv://jack:'+password+'@cluster0.bgtfj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+client = MongoClient(uri,
+                     ssl=True,
+                     ssl_cert_reqs=ssl.CERT_NONE)
+
+mydb1 = client["Project2"]
 
         #base urls
 base='https://www.alphavantage.co'
@@ -30,7 +37,7 @@ base='https://www.alphavantage.co'
 for ticker in ticker_list: 
             #runs with limiter            
     with rate_limiter:
-        print(ticker)
+        #print(ticker)
                 #API Call for current ticker  
         url = base+'/query?function=TIME_SERIES_DAILY&symbol='+ticker+'&outputsize=compact&apikey=api_key'
         r = requests.get(url)
@@ -51,7 +58,7 @@ for ticker in ticker_list:
         df2.reset_index(inplace=True)
         data_dict1 = df2.to_dict("records")
                 #insert stock data to mongo database
-        mycol1.insert_many(data_dict1,)
+        mycol1.insert_many(data_dict1)
                 #turn off index on dataframe for next stock
         df2.reset_index(inplace=False)
                 #when limit is active, wait
