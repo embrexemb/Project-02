@@ -23,7 +23,7 @@ ticker_list=  list['Symbol'].tolist()
 #print(ticker_list)
 
         #Mongo client
-uri = 'mongodb+srv://Scott'+password+'@cluster0.w73ay.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+uri = 'mongodb+srv://Scott:'+password+'@cluster0.w73ay.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 client = MongoClient(uri,
                      ssl=True,
                      ssl_cert_reqs=ssl.CERT_NONE)
