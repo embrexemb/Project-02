@@ -1,0 +1,70 @@
+
+List any of the apis that we have used:
+
+
+List the javascript libraries that are unique
+
+ETL - Transform step:
+What data was put into Mongodb with any changes or cleaning
+what data was used in realtime
+what data was used with machine learning - hybrid or tensorflow libraries
+
+ETL - Load
+used api call in a python module to load mongo
+had two databases with separate collections for use by team
+
+used yfinance api call for historic data 
+
+tensorflow data - in use with ##data
+
+
+Data Exploration
+Charts Used:
+Heat map example: https://www.finscreener.org/map
+Candlestick chart for single chart - historic data looking at .....
+Bubble chart example: https://www.finscreener.org/map/bubble
+When bubble chart is clicked - goes to https://www.finscreener.org/tmus-t-mobile-us-inc-3919i
+histogram example for P/E of multiple stocks: https://www.finscreener.org/map/histogram/dj30
+features of finscreener: https://www.finscreener.org/premium
+
+Data Limitations
+What you get
+
+
+Listing of all the apis
+
+List of the Flask api and git repo
+
+Libraries used - beyond the standard libraries
+Plotly, D3, etc...
+
+
+
+Machine Learning steps:
+
+Identify training set
+
+Using Tensorflow or hybrid set [if applicable]
+
+Chart the learning datasets after identified
+Use heatmap to show if correlation exists, use boxplot for outlier plotting, Use line graph for prediction results
+
+Hypothesis:
+Can constructs show a statistically significant result that predicts whether a stock, market sector or index will go up or down using 100 days of data.
+
+
+
+Showing results - show line chart of predictions on one page; show a form that will allow user to input their data for same ML construct to see what results are given
+
+
+References:
+Definition of RSI and Stochastic RSI
+https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/stochrsi
+Definition of MACD
+https://www.investopedia.com/terms/m/macd.asp
+
+https://tcoil.info/compute-macd-indicator-for-stocks-with-python/
+https://tcoil.info/compute-rsi-for-stocks-with-python-relative-strength-index/
+https://tcoil.info/get-stochastic-rsi-for-stocks-with-python/
+https://tcoil.info/plot-multiple-stocks-in-python/
+https://tcoil.info/stock-price-trend-prediction-using-neural-network-with-pytorch/
