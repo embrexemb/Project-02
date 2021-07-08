@@ -5,7 +5,7 @@ from config import api_key
 import json
 # Get user input for stock Ticker
 ticker = "IBM"
-url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+ticker+'&outputsize=compact&apikey=api_key'
+url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+ticker+'&outputsize=compact&apikey=api_key&datatype=csv'
 r = requests.get(url)
 data = r.json()
 
