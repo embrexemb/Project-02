@@ -1,85 +1,29 @@
-/**
- * Helper function to select stock data
- * Returns an array of values
- * @param {array} rows
- * @param {integer} index
- * index 0 - Date
- * index 1 - Open
- * index 2 - High
- * index 3 - Low
- * index 4 - Close
- * index 5 - Volume
- */
+d3.csv("./Stock List.csv").then(function(stockData) {
+    console.log(stockData)
+    
+    var stock = stockData.map(data => data.stock);
+    console.log("stocks", stock)
 
-// Submit Button handler
-function handleSubmit() {
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
-  
-    // Select the input value from the form
-    var stock = d3.select("#stockInput").node().value;
-    console.log(stock);
-  
-    // clear the input value
-    d3.select("#stockInput").node().value = "";
-  
-    // Build the plot with the new stock
-    buildPlot(stock);
-  }
-  
-  function buildPlot(stock) {
-    var apiKey = "NABDZFV4HO4HQ68G";
-  
-    var url = 'https://www.alphavantage.co/query?function=EARNINGS&symbol=IBM&apikey=${apiKey}';
-
-    d3.json(url).then(function(data) {
-      // Grab values from the response json object to build the plots
-      var name = data.dataset.name;
-      var stock = data.dataset.dataset_code;
-      var startDate = data.dataset.start_date;
-      var endDate = data.dataset.end_date;
-      // Print the names of the columns
-      console.log(data.dataset.column_names);
-      // Print the data for each day
-      console.log(data.dataset.data);
-      var dates = data.dataset.data.map(row => row[0]);
-      // console.log(dates);
-      var closingPrices = data.dataset.data.map(row => row[4]);
-      // console.log(closingPrices);
-  
-      var trace1 = {
-        type: "scatter",
-        mode: "lines",
-        name: name,
-        x: dates,
-        y: closingPrices,
-        line: {
-          color: "#17BECF"
-        }
-      };
-  
-      var data = [trace1];
-  
-      var layout = {
-        title: `${stock} closing prices`,
-        xaxis: {
-          range: [startDate, endDate],
-          type: "date"
-        },
-        yaxis: {
-          autorange: true,
-          type: "linear"
-        }
-      };
-  
-      Plotly.newPlot("plot", data, layout);
-  
+    stockData.forEach(function(data) {
+        data.stock = +data.symbol;
+        console.log("Stock", data.name)
+        console.log("Symbol", data.symbol)
     });
-  }
-  
-  // Add event listener for submit button
-  d3.select("#submit").on("click", handleSubmit);
+}).catch(function(error) {
+    console.log(error)
+});
 
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://twelve-data1.p.rapidapi.com/quote?symbol=AMZN&interval=1month&outputsize=30&format=json",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "c81af1a058msh121c52584d5e037p18092ejsn4d644da6f0c4",
+		"x-rapidapi-host": "twelve-data1.p.rapidapi.com"
+	}
+};
 
-
-
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
