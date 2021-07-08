@@ -1,18 +1,23 @@
 var apiKey = "NABDZFV4HO4HQ68G"
 
-var url = 'https://www.alphavantage.co/query?function=EARNINGS&symbol=IBM&apikey=demo';
+var url = 'https://www.alphavantage.co/query?function=EARNINGS&symbol=IBM&apikey=NABDZFV4HO4HQ68G';
 
-request.get({
-    url: url,
-    json: true,
-    headers: {'User-Agent': 'request'}
-  }, (err, res, data) => {
-    if (err) {
-      console.log('Error:', err);
-    } else if (res.statusCode !== 200) {
-      console.log('Status:', res.statusCode);
-    } else {
-      // data is successfully parsed as a JSON object:
-      console.log(data);
-    }
-});
+console.log(url)
+
+
+
+/**
+* @param {array} rows
+* @param {integer} index
+* index 0 - Symbol
+* index 1 - Fiscal
+* index 2 - Reported
+*/
+
+function unpack(rows, index){
+    return rows.map(function(row) {
+        return row[index]
+    })
+}
+
+
