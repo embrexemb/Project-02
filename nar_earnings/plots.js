@@ -23,10 +23,11 @@ function unpack(rows, index){
 function buildPlot() {
   d3.jason(url).then(result => {
     console.log(result)
-    var name = result.dataset.name;
-    var data = result.dataset.data;
+    var name = result.earnings-surpises.name;
+    var data = result.earnings-surpises.data;
 
-    var dates = unpack(data, 0);
-    console.log(dates)
+    var date = unpack(data, 0);
+    console.log(date)
   })
 }
+
