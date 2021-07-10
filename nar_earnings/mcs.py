@@ -41,7 +41,7 @@ for x in range(num_stimulations):
     simulation_df[x] = price_series
 
 fig = plt.figure()
-fig.suptitle('Monte Carlo Simulation: AAPL')
+fig.subtitle('Monte Carlo Simulation: AAPL')
 plt.plot(simulation_df)
 plt.axhline(y = last_price, color = 'r', linestyle = '-')
 plt.xlabel("Day")
