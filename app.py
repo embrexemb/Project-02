@@ -14,10 +14,6 @@ mongo = PyMongo(app, uri="mongodb+srv://Scott:nN5GELRQucw.qJb@cluster0.w73ay.mon
 def index():
     return render_template('index.html')
     
-@app.route('/teams')
-def teams():
-    return render_template('team.html')
-
 @app.route('/method')
 def method():
    return render_template('methodology.html')
@@ -30,10 +26,6 @@ def dashboard():
 def compare_stocks():
     return render_template('compare_stocks.html')
     
-@app.route('/modeling')
-def modeling():
-    return render_template('modeling.html')
-
 #Mongo data fetch
 @app.route('/mongo/data_fetch')
 def data_fetch():
@@ -52,19 +44,7 @@ def data_fetch():
         })
 
     return jsonify(stocks)
-#testing mongo connections
-#@app.route('/api/notes/mongo')
-#def note_mongo():
- #   notes = mongo.db.tasks.find()
-#  data = []
-#
-#   for note in notes:
-#        data.append({
-#           '_id': str(note['_id']),
-#           'content': note['content']
-#       })
-#
-#   return jsonify(data)
+
 
 if __name__=="__main__":
     app.run(debug=True)

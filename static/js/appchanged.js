@@ -113,30 +113,34 @@ function XsetupMetaData(sample){
             metadataPanel.append("h6").text(`${key.toUpperCase()}: ${value}`)
         })
 
-        var gaugeData = [{
+        //buildPlot(sample)
+       var gaugeData = [{
             domain: {x:[0,1], y:[0,1]},
-            marker: {size: 28, color:'750000'},
+           marker: {size: 28, color:'750000'},
             value: result.wfreq,
-            title: 'Trades Increasing - Decreasing ',
-            titlefont: {family: "Arial, Helvtetica, sans-serif"},
-            type: 'indicator',
-            gauge: {axis:{visible:true, range: [-0,9]}},
-            mode: "number+gauge"
+           title: 'Trades Increasing - Decreasing ',
+           titlefont: {family: "Arial, Helvtetica, sans-serif"},
+           type: 'indicator',
+           gauge: {axis:{visible:true, range: [-0,9]}},
+           mode: "number+gauge"
         }];
 
         var gauge_layout = {
             width: 600,
-            height: 450,
-            margin: {l:100, r:100, t:100, b:100},
-            line:{
-                color: '#631da9'
-            },
+           height: 450,
+           margin: {l:100, r:100, t:100, b:100},
+           line:{
+               color: '#631da9'
+           },
             font: {color: "#1d30a9", family: "Arial, Helvtetica, sans-serif"},
         };
 
-        Plotly.newPlot("gauge", gaugeData,gauge_layout);
-    });
-} //XetupMetaData
 
+
+        Plotly.newPlot("gauge", gaugeData,gauge_layout);
+        //Plotly.newPlot("plot", data, layout);
+    });
+   
+} //XetupMetaData
 
 
