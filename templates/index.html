@@ -23,34 +23,20 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="themes">Dashboard <span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="themes">
-                <a class="dropdown-item" href="{{ url_for('dashboard')}}">Main Dashboard</a>
+                <a class="dropdown-item" href="{{ url_for('dashboard')}}">Analytics</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ url_for('compare_stocks')}}">Compare Stocks</a>
-                               
-                
-              </div>
+      
+               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('method')}}">Methodology</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('modeling')}}">Predictive Models</a>
-            </li>
+           
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('teams')}}">The Team</a>
             </li>
-            <!--<li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="download">Spacelab <span class="caret"></span></a>
-              <div class="dropdown-menu" aria-labelledby="download">
-                <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/mbf28j4t/">Open in JSFiddle</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../5/spacelab/bootstrap.min.css" download>bootstrap.min.css</a>
-                <a class="dropdown-item" href="../5/spacelab/bootstrap.css" download>bootstrap.css</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../5/spacelab/_variables.scss" download>_variables.scss</a>
-                <a class="dropdown-item" href="../5/spacelab/_bootswatch.scss" download>_bootswatch.scss</a>
-              </div>
-            </li> -->
+      
           </ul>
           <ul class="navbar-nav ms-md-auto">
             <li class="nav-item">
@@ -64,46 +50,52 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="page-header" id="banner">
+   
+      <div class="container">
+
         <div class="row">
-          <div class="col-lg-8 col-md-7 col-sm-6">
-            <h1>Home Page Introduction</h1>
-            <p class="lead">Initial Splash Page</p>
-          </div>
-          <div class="col-lg-4 col-md-5 col-sm-6">
-            <div class="sponsor">
-              <script async src="https://cdn.carbonads.com/carbon.js?serve=CKYIE23N&placement=bootswatchcom" id="_carbonads_js"></script>
-            </div>
+          <div class="col-md-12 jumbotron text-center">
+            <h1>Stock Market Data</h1>
+            <p>Use the interactive charts below to explore the dataset</p>
           </div>
         </div>
+
+        <div class="row">
+
+          <div class="col-md-2">
+
+            <div class="well">
+              <h5>Select A Stock:</h5>
+              <select id="selDataset" onchange="optionChanged(this.value)"></select>
+            </div>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h5 class="panel-title" style="color:aqua">Stock Data</h5>
+              </div>
+              <div id="sample-metadata" class="panel-body"></div>
+            </div>
+            
+          </div>
+
+          <div class="col-md-5">
+            <div id="bar"></div>
+          </div>
+
+         
+          <div class="col-md-5">
+            <div id="gauge"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div id="bubble"></div>
+            </div>
+          </div>
+
       </div>
-
-      <!-- Navbar
-      ================================================== -->
+    
      
-
-      <!-- Buttons
-      ================================================== -->
-
-
-      <!-- Typography
-      ================================================== -->
-       <!-- Headings -->
-
-      <!-- Blockquotes -->
-
-      <!-- Tables
-      ================================================== -->
-     
-      <!-- Forms
-      ================================================== -->
-      
-      <!-- Indicators
-      ================================================== -->
-      
-      <!-- Dialogs
-      ================================================== -->
             
 
       <footer id="footer">
@@ -111,14 +103,16 @@
           <div class="col-lg-12">
             <ul class="list-unstyled">
               <li class="float-end"><a href="#top">Back to top</a></li>
+          
               <li><a href="https://twitter.com/bootswatch">Bootswatch Twitter</a></li>
               <li><a href="https://github.com/thomaspark/bootswatch">Bootstrap GitHub</a></li>
-              <li><a href="https://github.com/embrexemb/Project-02">API Github</a></li>
-              
+              <li><a href="/">API-Home</a></li>
+            
             </ul>
+            <p style ="color:red">All information listed is for Educational Purposes Only</p>
             <p>&copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;.</p>
             <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">MIT License</a>.</p>
-            <p>Using Spacelab <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a href="https://fontawesome.com/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+            <p>Based on <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a href="https://fontawesome.com/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
 
           </div>
         </div>
@@ -129,5 +123,13 @@
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://bootswatch.com/_vendor/prismjs/prism.js" data-manual></script>
     <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./static/js/appchanged.js"></script>
+  
+
+
   </body>
 </html>
