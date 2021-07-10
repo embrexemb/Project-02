@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://bootswatch.com/_vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/_vendor/prismjs/themes/prism-okaidia.css">
     <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(function(){
@@ -61,15 +63,20 @@
     <div class="container">
       <div class="page-header" id="banner">
         <div class="row">
-          <div class="col-lg-8 col-md-7 col-sm-6">
-            <h1>Choose a Stock</h1>
+        
+            <h1>Stocks</h1>
             <p class="lead">Looking at a time series chart</p>
-          </div>
-          <div class="col-lg-4 col-md-5 col-sm-6">
-            <div class="sponsor">
-              <script async src="https://cdn.carbonads.com/carbon.js?serve=CKYIE23N&placement=bootswatchcom" id="_carbonads_js"></script>
-            </div>
-          </div>
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="stockInput">Look a stock in Real Time</label>
+                <input type="text" class="form-control" id="stockInput" placeholder="Enter a stock">
+              </div>
+              <button id="submit" type="submit" class="btn btn-default">Plot Stock</button>
+            </form>
+            <div id="plot"></div>
+            <script src="plots.js"></script>
+
+          
         </div>
       </div>
 
@@ -171,5 +178,7 @@
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://bootswatch.com/_vendor/prismjs/prism.js" data-manual></script>
     <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </body>
 </html>
