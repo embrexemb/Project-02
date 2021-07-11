@@ -1,4 +1,4 @@
-var queryUrl = 'https://financialmodelingprep.com/api/v3/earnings-surpises/AAPL?apikey=demokey';
+var queryUrl = 'https://financialmodelingprep.com/api/v3/earnings-surpises/AAPL?apikey=demo';
 
 d3.json(queryUrl).then(function(data) {
     console.log(data)
