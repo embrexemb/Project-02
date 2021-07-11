@@ -93,8 +93,8 @@ console.log(estimatedEarning)
 
 var trace1 = {
   type: 'scatter',
-  x: actualEarningResult,
-  y: date,
+  x: date,
+  y: actualEarningResult,
   mode: 'markers',
   name: 'Actual Earnings',
   marker: {
@@ -109,8 +109,8 @@ var trace1 = {
 };
 
 var trace2 = {
-  x: estimatedEarning,
-  y: date,
+  x: date,
+  y: estimatedEarning,
   mode: 'markers',
   name: 'Estimated Earnings',
   marker: {
