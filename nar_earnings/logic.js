@@ -50,7 +50,7 @@ d3.json(queryUrl).then(function(data) {
         yaxis: {
           range: [0.2, 2]
         },
-        title:'Data Labels Hover'
+        title:'Stocks Earnings'
       };
       
       Plotly.newPlot('plot', data, layout);
