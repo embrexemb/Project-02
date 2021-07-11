@@ -157,9 +157,9 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
   return circlesGroup;
 }
 //retrieve data
-d3.csv('../static/data/data.csv').then(function (healthData) {
+d3.csv('./assets/data/data.csv').then(function (healthData) {
 
-  //console.log(healthData);
+  console.log(healthData);
 
   //Parse data
   healthData.forEach(function (data) {

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://bootswatch.com/_vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/_vendor/prismjs/themes/prism-okaidia.css">
     <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/d3Style.css">
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(function(){
@@ -23,6 +26,7 @@
     </script>
 
   </head>
+
   <body>
     <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
       <div class="container">
@@ -61,115 +65,31 @@
     <div class="container">
       <div class="page-header" id="banner">
         <div class="row">
-          <div class="col-lg-8 col-md-7 col-sm-6">
-            <h1>Comparing Stock Performance Over Time</h1>
-            <p class="lead">Click in the axes labels to see results change</p>
-          </div>
-          <div class="col-lg-4 col-md-5 col-sm-6">
-            <div class="sponsor">
-              <script async src="https://cdn.carbonads.com/carbon.js?serve=CKYIE23N&placement=bootswatchcom" id="_carbonads_js"></script>
-            </div>
+          <div class="col-xs-12 col-md-12">
+            <h1>D3Times</h1>
           </div>
         </div>
-      </div>
-
-                
-
-      <footer id="footer">
-
-        <div class="container">
-          <div class = "jumbotron">
-              <button id = "Team">Team</button>
-           </div>
-      </div>
-
-      <div class="container">
-        <div class="page-footer" id="banner2">
-          <div class="row">
-  
-            <div class="col-md-3 col-xs-12">
-              <div class="card border-light">
-  
-                  <h3 style="color:blue">Rupesh Patel</h3>
-                  <p class='aboutus'>
-                    <a href="#" target="_blank"><img
-                      src=""></a>
-              <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
-                      src=""></a>
-              <a href="" target="_blank"><img src=""></a>
-                  </p>
-              </div>
-            </div> 
-
-            <div class="col-md-3 col-xs-12">
-              <div class="card border-light">
-  
-                  <h3 style="color:cornflowerblue">John McIntyre</h3>
-                  <p class='aboutus'>
-                    <a href="#" target="_blank"><img
-                      src=""></a>
-              <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
-                      src=""></a>
-              <a href="" target="_blank"><img src=""></a>
-                  </p>
-              </div>
-            </div>
-        
-            <div class="col-md-3 col-xs-12">
-              <div class="card border-light">
-  
-                  <h3 style="color:darkcyan">Norman Robinson</h3>
-                  <p class='aboutus'>
-                      <a href="#" target="_blank"><img
-                              src=""></a>
-                      <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
-                              src=""></a>
-                      <a href="" target="_blank"><img src=""></a>
-                  </p>
-              </div>
-            </div>
-        
-            <div class="col-md-3 col-xs-12">
-              <div class="card border-light">
-  
-                  <h3 style="color:darksalmon">Eve Barkley</h3>
-                  <p class='aboutus'>
-                      <a href="#" target="_blank"><img
-                              src=""></a>
-                      <a href="https://www.linkedin.com/in/rupesh-patel-mba-70152526/" target="_blank"><img
-                              src=""></a>
-                      <a href="" target="_blank"><img src=""></a>
-                  </p>
-              </div>
-            </div>
-  
-        </div>
-       </div>
-      <br/><br/>  
-
         <div class="row">
-          <div class="col-lg-12">
-            <ul class="list-unstyled">
-              <li class="float-end"><a href="#top">Back to top</a></li>
-          
-              <li><a href="https://twitter.com/bootswatch">Bootswatch Twitter</a></li>
-              <li><a href="https://github.com/thomaspark/bootswatch">Bootstrap GitHub</a></li>
-              <li><a href="/">API-Home</a></li>
-            
-            </ul>
-            <p style ="color:red">All information listed is for Educational Purposes Only</p>
-            <p>&copy; <a>COPYRIGHT UNC BOOT CAMP 2020</a> &copy;.</p>
-            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">MIT License</a>.</p>
-            <p>Based on <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a href="https://fontawesome.com/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
-
+          <div class="col-xs-12  col-md-9">
+            <div id="scatter">
+              <!-- We append our chart here. -->
+            </div>
           </div>
         </div>
-      </footer>
+
+    
+    </div>        
+       
+     
     </div>
 
     <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://bootswatch.com/_vendor/prismjs/prism.js" data-manual></script>
     <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+   
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <script type="text/javascript" src="./static/js/app.js"></script>
   </body>
 </html>
