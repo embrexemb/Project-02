@@ -58,71 +58,32 @@ function XsetupCharts(sample){
         console.log(sample_values);
         var otu_ids = result.otu_ids;
         var otu_labels = result.otu_labels;
+        var traceBubble = {
+            //x: otu_ids,
+            x:otu_labels,
+            y:sample_values,
+            text: otu_labels,
+            mode: 'markers',
+            marker:{
+                size:sample_values,
+                color: otu_labels,
+                colorscale:"Plasma"
+            }
+        };
 
-        //Earning bubble
-console.log(sample)
+        var bubble_data = [traceBubble];
+        var bubble_layout = {
+            title: 'Trade Volumes',
+            showLegend: true,
+            hovermode:'closest',
+            xaxis: {title:"Ticker ID " + sample},
+            font: {color: "#1d30a9", family: "Arial, Helvtetica, sans-serif"},
+            margin: {t:30}
 
-var url_string ='https://financialmodelingprep.com/api/v3/earnings-surpises/';
-var api_k = '?apikey=3b360a656ab272acfd49d852ee96ea5c';
-var queryUrl = url_string + sample + api_k
-console.log(queryUrl)
-d3.json(queryUrl).then(function(data) {
-    console.log(data)
+        };
 
-    var date = data.map((date) => {
-        return date.date;
-      });
-      console.log(date)
-      
-      var symbol = data.map((symbol) => {
-        return symbol.symbol;
-      });
-      console.log(date)
-      
-      var actualEarningResult = data.map((actualEarningResult) => {
-        return actualEarningResult.actualEarningResult
-      });
-      console.log(actualEarningResult)
-      
-      var estimatedEarning = data.map((estimatedEarning) => {
-        return estimatedEarning.estimatedEarning
-      });
-      console.log(estimatedEarning)
-      
-      var trace1 = {
-        x: date,
-        y: estimatedEarning,
-        mode: 'markers',
-        type: 'scatter',
-        name: 'Estimated Earning',
-        marker: { size: 12 }
-      };
-      
-      var trace2 = {
-        x: date,
-        y: actualEarningResult,
-        mode: 'markers',
-        type: 'scatter',
-        name: 'Actual Earning',
-        marker: { size: 12 }
-      };
-      
-      var data = [ trace1, trace2 ];
-      
-      var layout = {
-        xaxis: {
-          range: [ data ]
-        },
-        yaxis: {
-          range: [0.2, 2]
-        },
-        title: `Earnings for ${sample}`
-      };
-      
-      Plotly.newPlot("bubble", data, layout);
-    })
+        Plotly.newPlot('bubble',bubble_data, bubble_layout);
 
-       
         var trace_horizontal = {
             x: sample_values.slice(0,10).reverse(),
             y: otu_ids.slice(0,10).map(otuID => `Day ::  ${otuID}`).reverse(),
@@ -157,11 +118,11 @@ function XsetupMetaData(sample){
        var gaugeData = [{
             domain: {x:[0,1], y:[0,1]},
            marker: {size: 28, color:'750000'},
-            value: result.wfreq/14,
+            value: result.wfreq,
            title: 'Trades Increasing - Decreasing - Will change to RSI',
            titlefont: {family: "Arial, Helvtetica, sans-serif"},
            type: 'indicator',
-           gauge: {axis:{visible:true, range: [0,8]}},
+           gauge: {axis:{visible:true, range: [10-500]}},
            mode: "number+gauge"
         }];
 

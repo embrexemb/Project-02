@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 #mongo = PyMongo(app, uri="mongodb://localhost:27017/notepad")
 mongo = PyMongo(app, uri="mongodb+srv://Scott:nN5GELRQucw.qJb@cluster0.w73ay.mongodb.net/Project2?retryWrites=true&w=majority")
+#mongoAgg = PyMongo(app, uri="mongodb+srv://Scott:nN5GELRQucw.qJb@cluster0.w73ay.mongodb.net/Project2-Aggregate?retryWrites=true&w=majority")
 
 @app.route('/')
 def index():
@@ -37,7 +38,7 @@ def nasdaq():
 #Mongo data fetch
 @app.route('/mongo/data_fetch')
 def data_fetch():
-    a_stock = mongo.db.CSCO.find()
+    a_stock = mongo.db.AMZN.find()
     stocks = []
     for stock in a_stock:
         stocks.append({
