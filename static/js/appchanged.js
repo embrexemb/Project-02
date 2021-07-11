@@ -59,13 +59,14 @@ function XsetupCharts(sample){
         var otu_ids = result.otu_ids;
         var otu_labels = result.otu_labels;
         var traceBubble = {
-            x: otu_ids,
+            //x: otu_ids,
+            x:otu_labels,
             y:sample_values,
             text: otu_labels,
             mode: 'markers',
             marker:{
                 size:sample_values,
-                color: otu_ids,
+                color: otu_labels,
                 colorscale:"Plasma"
             }
         };
@@ -75,7 +76,7 @@ function XsetupCharts(sample){
             title: 'Trade Volumes',
             showLegend: true,
             hovermode:'closest',
-            xaxis: {title:"OTU (Operational Taxonomic Unit) ID" + sample},
+            xaxis: {title:"Ticker ID " + sample},
             font: {color: "#1d30a9", family: "Arial, Helvtetica, sans-serif"},
             margin: {t:30}
 
@@ -85,7 +86,7 @@ function XsetupCharts(sample){
 
         var trace_horizontal = {
             x: sample_values.slice(0,10).reverse(),
-            y: otu_ids.slice(0,10).map(otuID => `OTU ${otuID}`).reverse(),
+            y: otu_ids.slice(0,10).map(otuID => `Day ::  ${otuID}`).reverse(),
             text: otu_labels.slice(0,10).reverse(),
             type: "bar",
             orientation: "h"
@@ -118,10 +119,10 @@ function XsetupMetaData(sample){
             domain: {x:[0,1], y:[0,1]},
            marker: {size: 28, color:'750000'},
             value: result.wfreq,
-           title: 'Trades Increasing - Decreasing ',
+           title: 'Trades Increasing - Decreasing - Will change to RSI',
            titlefont: {family: "Arial, Helvtetica, sans-serif"},
            type: 'indicator',
-           gauge: {axis:{visible:true, range: [-0,9]}},
+           gauge: {axis:{visible:true, range: [10-500]}},
            mode: "number+gauge"
         }];
 

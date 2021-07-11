@@ -39,8 +39,14 @@
               <div class="dropdown-menu" aria-labelledby="themes">
                 <a class="dropdown-item" href="{{ url_for('dashboard')}}">Analytics</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('compare_stocks')}}">Compare Stocks</a>
-      
+                <ul>
+                <li>
+                <a class="dropdown-item" href="{{ url_for('nyse')}}">Compare NYSE Stocks</a> 
+                </li>
+                <li>
+                <a class="dropdown-item" href="{{ url_for('nasdaq')}}">Compare NASDAQ Stocks</a>
+                </li>
+               </ul> 
                </div>
             </li>
             <li class="nav-item">

@@ -22,9 +22,17 @@ def method():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route('/compare_stocks')
-def compare_stocks():
-    return render_template('compare_stocks.html')
+#@app.route('/compare_stocks')
+#def compare_stocks():
+#    return render_template('compare_stocks.html')
+
+@app.route('/nyse')
+def nyse():
+    return render_template('nyse.html')
+
+@app.route('/nasdaq')
+def nasdaq():
+    return render_template('nasdaq.html')
     
 #Mongo data fetch
 @app.route('/mongo/data_fetch')
