@@ -79,17 +79,60 @@
 
 <div class="row">
             <div class="col-md-12">
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">Data in Use for Modeling and Analysis</div>
+                <div class="card text-dark mb-3">
+                    <div class="card-header">Data Research</div>
                     <div class="card-body">
                         <p class="card-text">
                         <ul>
-                            <li>
-                                <a href=""
-                                    target="_blank">Alphavantage API</a><br/>Stock Market Information<br>
-                            </li>
-                            
-                            
+                          <li>
+               
+                            <a href="https://pypi.org/project/yfinance/"
+                            target="popup"
+                            onclick="window.open('https://pypi.org/project/yfinance/','popup','width=600,height=600'); return false;">
+                            Yahoo Finance APIs
+                           </a>
+                         
+                        </li>
+                        <li>
+               
+                          <a href="https://towardsdatascience.com/python-how-to-get-live-market-data-less-than-0-1-second-lag-c85ee280ed93"
+                          target="popup"
+                          onclick="window.open(''https://towardsdatascience.com/python-how-to-get-live-market-data-less-than-0-1-second-lag-c85ee280ed93,'popup','width=600,height=600'); return false;">
+                          Live Market Data sets
+                         </a>
+                       
+                      </li>
+                      <li>
+               
+                        <a href="https://financialmodelingprep.com/developer/docs/dashboard"
+                        target="popup"
+                        onclick="window.open('https://financialmodelingprep.com/developer/docs/dashboard','popup','width=600,height=600'); return false;">
+                        Financial Modeling Data API
+                       </a>
+                     
+                    </li>
+                    <li>
+               
+                      <a href="https://www.alphavantage.co/documentation/"
+                      target="popup"
+                      onclick="window.open('https://www.alphavantage.co/documentation/','popup','width=600,height=600'); return false;">
+                      Alphavantage API
+                     </a>
+                   
+                  </li>
+                  <li>
+               
+                    <a href="https://www.quandl.com"
+                    target="popup"
+                    onclick="window.open('https://www.quandl.com','popup','width=600,height=600'); return false;">
+                    Quandle API
+                   </a>
+                 
+                </li>
+
+
+
+
                         </ul>
                         </p>
                     </div>
@@ -99,15 +142,19 @@
 
 <div class="row">
   <div class="col-md-12">
-      <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Transform Steps</div>
+      <div class="card text-dark mb-3">
+          <div class="card-header">Transforming Data</div>
           <div class="card-body">
               <p class="card-text">
               <ul>
                   <li>
-                      <a href=""
-                          target="_blank">Jupter Notebooks listed</a><br/>gives steps to transform data and note whether <br/>
-                          steps are used for charts or real time data processing<br>
+                      Data loaded to Mongo databases from an api or json file were cleaned before insertion into a collection
+                  </li>
+                  <li>
+                     Json file data was verfied before use in a chart or table
+                  </li>
+                  <li>
+                    CSV file data was cleaned and verified before use in a chart
                   </li>
                                   
               </ul>
@@ -119,24 +166,21 @@
 
 <div class="row">
   <div class="col-md-12">
-      <div class="card text-dark bg-light mb-3">
+      <div class="card text-dark mb-3">
           <div class="card-header">Data Repositories</div>
           <div class="card-body">
               <p class="card-text">
               <ul>
                   <li>
-                      <a href=""
+                      <a href="/mongo/data_fetch"
                           target="_blank">Mongo DB</a><br/>Database; Collections<br>
                   </li>
+                 
                   <li>
-                    <a href=""
-                    target="_blank">Mongo DB</a><br/>Database; Collections<br>
+                     JSON files used for home page charts
                   </li>
                   <li>
-                     JSON files in use
-                  </li>
-                  <li>
-                      CSV files in use
+                      CSV files used for dynamic bubble charts
                   </li>
               
                   
@@ -149,17 +193,22 @@
 
 <div class="row">
   <div class="col-md-12">
-      <div class="card text-dark bg-light mb-3">
+      <div class="card text-dark mb-3">
           <div class="card-header">Data Exploration</div>
           <div class="card-body">
               <p class="card-text">
               <ul>
                   <li>
-                      Note the chart - where it's used 
+                      Horizontal Bar Chart used to show top ten trading volume days in the past quarter
                   </li>
-                  
                   <li>
-                      
+                      Bubble chart used to Price to Earnings of a stock displayed on the home page
+                  </li>
+                  <li>
+                      Candlestick chart used to show a stock performance using the ticker symbol for input
+                  </li>
+                  <li>
+                      Dynamic bubble charts used to show NASDAQ and NYSE activity from the first two quarters of 2021
                   </li>
                   
               </ul>
@@ -170,26 +219,24 @@
 </div class="row">
 <div class="row">
   <div class="col-md-12">
-      <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Technical Analyses</div>
+      <div class="card text-dark mb-3">
+          <div class="card-header">Future Development</div>
           <div class="card-body">
               <p class="card-text">
               <ul>
                   <li>
-                      RSI
+                      RSI - Relative Strength Indicator models
                   </li>
                   <li>
-                    Stochastic RSI
+                    Stochastic RSI models
                   </li>
                   <li>
-                    MACD
+                    MACD - Moving Average Convergence Divergence models
                   </li>
                   <li>
                       Modeling for Velocity of Change by volume or price
                   </li>
-                  <li>
-                      
-                  </li>
+                 
                   
               </ul>
               </p>
