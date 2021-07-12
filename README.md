@@ -15,5 +15,5 @@ MONGO DB has 15 stock collections containing 100 records each, taken from alphav
 
 Python version for this environment is 3.6.13
 
-Note: the data files in the current repo has been corrupted.  In earlier repos the data files were not corrupted, but the data was not verified.
+Note: the data files in the current repo has been corrupted.  In earlier repos the data files were not corrupted, but the data was not verified.  To demo the live chart showing earnings, I switched back to an earlier json file that will use the ticker symbol but the bar chart data is not accurate stock information.
 
