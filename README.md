@@ -15,7 +15,5 @@ MONGO DB has 15 stock collections containing 100 records each, taken from alphav
 
 Python version for this environment is 3.6.13
 
-Research information found in Notebooks folder has examples to compute RSI [Relative Strenght Index]  and MACD - Notebooks are updated and fixed.  Use requirements.txt to see what packages are needed for the notebooks.
-
-
+Note: the data files in the current repo has been corrupted.  In earlier repos the data files were not corrupted, but the data was not verified.
 
