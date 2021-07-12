@@ -1,9 +1,21 @@
 # Project-02
+Heroku url:https://evening-cove-03792.herokuapp.com/
 
-Notebooks folder has examples to compute RSI [Relative Strenght Index]  and MACD - Notebooks are updated and fixed.  Use requirements.txt to see what packages are needed for the notebooks.
+For project requirements:
+
+The javascript file that generates the pop up cards that show the team is jquery.js 
+
+The charts created were: 
+Horizontal Bar chart
+Bubble chart showing the earnings
+Candlestick chart showing daily activity for a specific chart
+Two Bubble charts that show clickable x and Y axes
+
+MONGO DB has 15 stock collections containing 100 records each, taken from alphavantage
 
 Python version for this environment is 3.6.13
 
-The urls that the notebooks came from are listed in the first block of the notebook file.  The examples are easy to read and understand.  The charts can be converted to D3 charts - using our stock data
+Research information found in Notebooks folder has examples to compute RSI [Relative Strenght Index]  and MACD - Notebooks are updated and fixed.  Use requirements.txt to see what packages are needed for the notebooks.
+
 
 
